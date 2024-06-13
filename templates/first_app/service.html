@@ -1,0 +1,79 @@
+{% extends "first_app/base.html" %}
+
+{% block content %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vehicles with Service Information</title>
+
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+    th {
+      text-align: left;
+    }
+    caption {
+      font-weight: bold;
+      padding: 10px;
+    }
+     h1 {
+    color:mediumvioletred;
+  }
+  caption{
+    color:maroon;
+  }
+  th{
+    color: red;
+  }
+  body{
+    background-color: aliceblue;
+  }
+  </style>
+</head>
+<body>
+      <nav>
+       <ul>
+  <li><a href="{% url 'clients' %}" style="font-weight: bold; font-size: 16px; color: #333;">Clients</a></li>
+  <li><a href="{% url 'user_register' %}" style="font-weight: bold; font-size: 16px; color: #333;">Users Registration</a></li>
+  <li><a href="{% url 'register' %}" style="font-weight: bold; font-size: 16px; color: #333;">Clients Registration</a></li>
+</ul>
+
+  <h1>Vehicles with Service Information</h1>
+  <table>
+    <caption>List of Vehicles with Service Information</caption>
+    <thead>
+      <tr>
+        <th>Vehicle ID</th>
+        <th>Model Name</th>
+        <th>Year</th>
+        <th>Service Name</th>
+        <th>Service Description</th>
+      </tr>
+    </thead>
+    <tbody>
+  {% for vehicle in vehicles %}
+<tr>
+  <td>{{ vehicle.id }}</td>
+  <td>{{ vehicle.model_name }}</td>
+  <td>{{ vehicle.year }}</td>
+  {% if vehicle.services.count > 0 %}
+    <td>{{ vehicle.services.first.name }}</td>
+    <td>{{ vehicle.services.first.name }}</td>
+
+    <td>{{ vehicle.services.first.description }}</td>
+
+  {% else %}
+    <td>No service information available</td>
+    <td></td>
+  {% endif %}
+</tr>
+{% endfor %}
+
+    </tbody>
+  </table>
+</body>
+</html>
+{% endblock %}

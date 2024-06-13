@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module data_generator</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">data_generator</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Chazem%20el-batawy%5Conedrive%5Cdesktop%5Cusers_vehicle%5Cfirst_pro%5Cdata_generator.py">c:\users\hazem el-batawy\onedrive\desktop\users_vehicle\first_pro\data_generator.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="django.html">django</a><br>
+<a href="phonenumbers.geocoder.html">phonenumbers.geocoder</a><br>
+</td><td class="multicolumn"><a href="os.html">os</a><br>
+<a href="phonenumbers.html">phonenumbers</a><br>
+</td><td class="multicolumn"><a href="random.html">random</a><br>
+<a href="time.html">time</a><br>
+</td><td class="multicolumn"><a href="uuid.html">uuid</a><br>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-generate_random_vin"><strong>generate_random_vin</strong></a>()</dt><dd><span class="code">#&nbsp;Gen&nbsp;Random&nbsp;vins&nbsp;uuid</span></dd></dl>
+ <dl><dt><a name="-populate"><strong>populate</strong></a>(num_vehicles=None, min_purchase_date=None, max_purchase_date=None, model_name_distribution=None, color_list=None)</dt><dd><span class="code">Generates&nbsp;random&nbsp;vehicle&nbsp;and&nbsp;client&nbsp;data,&nbsp;creating&nbsp;objects&nbsp;in&nbsp;the&nbsp;database.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;num_vehicles&nbsp;(int,&nbsp;optional):&nbsp;The&nbsp;number&nbsp;of&nbsp;vehicles&nbsp;to&nbsp;generate.&nbsp;Defaults&nbsp;to&nbsp;defined&nbsp;value.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;min_purchase_date&nbsp;(datetime.datetime,&nbsp;optional):&nbsp;The&nbsp;minimum&nbsp;date&nbsp;for&nbsp;the&nbsp;purchase&nbsp;range.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defaults&nbsp;to&nbsp;defined&nbsp;value.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;max_purchase_date&nbsp;(datetime.datetime,&nbsp;optional):&nbsp;The&nbsp;maximum&nbsp;date&nbsp;for&nbsp;the&nbsp;purchase&nbsp;range.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Defaults&nbsp;to&nbsp;defined&nbsp;value.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;model_name_distribution&nbsp;(dict,&nbsp;optional):&nbsp;A&nbsp;dictionary&nbsp;specifying&nbsp;the&nbsp;probability<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of&nbsp;generating&nbsp;a&nbsp;specific&nbsp;car&nbsp;manufacturer's&nbsp;model.&nbsp;Defaults&nbsp;to&nbsp;None&nbsp;(uniform&nbsp;distribution).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color_list&nbsp;(list,&nbsp;optional):&nbsp;A&nbsp;list&nbsp;of&nbsp;color&nbsp;options&nbsp;for&nbsp;vehicles.&nbsp;Defaults&nbsp;to&nbsp;defined&nbsp;value.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>color_options</strong> = ['Red', 'Blue', 'Black', 'Silver', 'Gray', 'White']<br>
+<strong>fake</strong> = &lt;faker.proxy.Faker object&gt;<br>
+<strong>manufacturer_list</strong> = ['Toyota', 'Honda', 'BMW', 'Fiat']<br>
+<strong>vehicle_type_choices</strong> = ['Car', 'Truck', 'Motorcycle', 'SUV']</td></tr></table>
+</body></html>

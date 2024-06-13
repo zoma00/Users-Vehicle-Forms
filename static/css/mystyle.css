@@ -1,0 +1,55 @@
+.login-link {
+  font-weight: bold;
+  color: red;
+
+}
+
+/* In a separate CSS file (preferred) or within a `<style>` tag */
+.nav-button {
+  background-color: #eee;  /* Adjust background color as desired */
+  border: none;
+  color: black;
+  padding: 10px 20px; /* Adjust padding as desired */
+  text-align: center;
+  text-decoration: none; /* Remove underline from links */
+  display: inline-block;  /* Allow buttons to sit side-by-side */
+  cursor: pointer;  /* Indicate clickable behavior on hover */
+  margin: 5px;  /* Add optional margin for spacing */
+}
+
+.nav-button:hover {
+  background-color: #ddd;  /* Optional hover effect */
+}
+
+
+
+body {
+  background-color: #f5f5f5; /* Light background color */
+}
+
+nav a:hover {
+  color: #2e6da4; /* Slightly lighter blue on hover */
+}
+
+h1 {
+  color: blueviolet; /* Darker blue for main heading */
+}
+
+h2 {
+  color: #6c757d; /* Light gray for subheading */
+}
+
+
+/*
+
+nav {
+  background-color: #337ab7; /* Darker blue for navigation 
+  color: white; /* White text for navigation links 
+}
+
+nav a {
+  color: white; /* White text for navigation links 
+  text-decoration: none; /* Remove underline from links 
+}
+
+*/

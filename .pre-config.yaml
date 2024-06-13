@@ -1,0 +1,6 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: v22.3.2  # Replace with the desired black version
+    hooks:
+      - id: black
+

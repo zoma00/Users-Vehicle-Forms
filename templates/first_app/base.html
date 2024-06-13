@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">  </head>
+<body>
+  <header>
+    <h1>My Website</h1>
+    <nav>
+      </nav>
+  </header>
+
+  <main>
+    {% block content %}
+      {% endblock %}
+  </main>
+
+  <footer>
+    </footer>
+
+  {% load static %}
+  <script src="{% static 'js/jquery.min.js' %}"></script>  </body>
+</html>

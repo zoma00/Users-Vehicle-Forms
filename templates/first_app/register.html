@@ -1,0 +1,182 @@
+{% extends "first_app/base.html" %}
+
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Client and Vehicle Registration</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.min.css' %}">
+  <style>
+    body {
+      background-color: deepskyblue;
+    }
+  </style>
+</head>
+<body>
+
+  <form method="POST"> 
+    {% csrf_token %}
+  
+  
+
+  <h1>Client and Vehicle Registration</h1>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="POST">
+    {% csrf_token %}
+
+   <h2>Client Information</h2>
+
+{% if client_form %}  {{ client_form.as_p }}
+
+  {% if client_form.errors %}
+    <ul class="errors">
+      {% for error in client_form.errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% else %}
+  <p>No client form provided.</p>
+{% endif %}
+
+<h2>Vehicle Information</h2>
+
+{% for field in vehicle_form %}
+  {% if field.name != 'service' %}  <div class="form-group">
+    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+    {{ field }}
+    {% if field.errors %}
+      <ul class="errors">
+        {% for error in field.errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+  {% endif %}
+{% endfor %}
+
+
+{{ service_formset.management_form }}  # Hidden fields for formset management
+
+<h2>Services (Optional)</h2>
+{% for service_form in service_formset %}
+  <div class="form-group">
+    <label for="{{ service_form.prefix }}">{{ service_form.label }}</label>
+    {{ service_form }}  # Renders individual service form (name, description)
+    {% if service_form.errors %}
+      <ul class="errors">
+        {% for error in service_form.errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+{% endfor %}
+
+
+ 
+    <button type="submit">Register Client and Vehicle and Service</button>
+  </form>
+
+  <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+</body>
+</html>
+{% endblock %}
+
+
+
+
+
+
+<!--
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Client and Vehicle Registration</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.min.css' %}">
+  <style>
+    body{
+      background-color: deepskyblue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Client and Vehicle Registration</h1>
+
+  {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+        <li class="{{ message.tags }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <form method="POST">{% debug %}
+    {% csrf_token %}
+
+    <h2>Client Information</h2>
+    {% for field in client_form %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% if field.errors %}
+          <ul class="errors">
+            {% for error in field.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    <h2>Vehicle Information</h2>
+    {% for field in vehicle_form %}
+      <div class="form-group">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% if field.errors %}
+          <ul class="errors">
+            {% for error in field.errors %}
+              <li>{{ error }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    {% endfor %}
+    <h2>Services (Optional)</h2>
+{% for service_form in service_formset %}
+    <div class="form-group">
+        <label for="id_{{ service_form.prefix }}">{{ service_form.label }}</label>
+        {{ service_form.as_p }}   Render form fields for each service 
+
+        {% if service_form.errors %}
+            <ul class="errors">
+                {% for error in service_form.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endfor %}
+
+      <button type="submit">Register</button>
+    </form>
+
+    <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+  </body>
+  </html>
+
+-->

@@ -1,0 +1,32 @@
+{% extends "first_app/base.html" %}
+
+{% block content %}
+  <h1>Users and Vehicles program Data-base</h1>
+  <h2>This program is designed for Data-base Clients and Vehicles</h2>
+  <nav>
+
+    {% if user.is_authenticated %}
+      <p>Hello, {{ user.username }}! You are logged in.</p>
+      <div>
+        <ul>
+          <li><a href="{% url 'user_register' %}">Users Registration</a></li>
+          <li><a href="{% url 'register' %}">Client Registration</a></li>
+          <li><a href="{% url 'clients' %}">Clients List</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>  </ul>
+      </div>
+    {% else %}
+      <form method="POST">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <br>
+        <button type="submit">Login</button>
+        <a href="{% url 'register' %}">Register Here</a>
+      </form>
+    {% endif %}
+
+  </nav>
+{% endblock %}

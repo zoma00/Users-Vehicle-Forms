@@ -1,0 +1,101 @@
+{% extends "first_app/base.html" %}
+
+{% block content %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+  <title>Vehicles and Clients</title>
+
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+    th {
+      text-align: left;
+    }
+    caption {
+      font-weight: bold;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+    <nav>
+        <ul>
+          
+          <li><a href="{% url 'user_register' %}">Users Rgisteration</a></li>
+          <li><a href="{% url 'register' %}">Clients Registeration</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>  </ul>
+
+        </ul> 
+
+    </nav>
+  <h1>Vehicles and Clients</h1>
+
+  <h2>Vehicles</h2>
+  <table>
+    <caption>List of Vehicles</caption>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Model Name</th>
+        <th>Year</th>
+        <th>Client</th>
+        <th>Purchase Date</th>
+        <th>Color</th>  <th>Engine Capacity</th>  <th>Service VIN</th>  </tr>
+    </thead>
+    <tbody>
+      {% for vehicle in vehicles %}
+      <tr>
+        <td>{{ vehicle.id }}</td>
+        <td>{{ vehicle.type }}</td>
+        <td>{{ vehicle.model_name }}</td>
+        <td>{{ vehicle.year }}</td>
+        {% if vehicle.client %}
+          <td>{{ vehicle.client.first_name }} {{ vehicle.client.last_name }}</td>
+        {% else %}
+          <td>Unassigned</td>
+        {% endif %}
+        <td>{{ vehicle.purchase_date }}</td>
+        <td>{{ vehicle.color }}</td>  <td>{{ vehicle.engine_capacity }}</td>  <td>{{ vehicle.service_vin }}</td>  </tr>
+      {% endfor %}
+      <p>Number of vehicles: {{ vehicles|length }}</p>
+
+    </tbody>
+  </table>
+
+  <br>
+
+  <h2>Clients</h2>
+  <table>
+    <caption>List of Clients</caption>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for client in clients %}
+      <tr>
+        <td>{{ client.id }}</td>
+        <td>{{ client.first_name }}</td>
+        <td>{{ client.last_name }}</td>
+        <td>{{ client.email }}</td>
+      </tr>
+      {% endfor %}
+  <p>Number of Clients: {{ clients|length }}</p>
+
+    </tbody>
+  </table>
+
+</body>
+
+</html>
+{% endblock %}
