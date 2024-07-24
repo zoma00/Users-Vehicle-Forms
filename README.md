@@ -64,10 +64,4 @@ _______________________
     Custom user model and user management logic.
 
 2- `first_app`: 
-    Core application containing middleware, forms, views, tests, logging utilities, and data generation tools.
-
-Further Development:
-____________________
-
-1- Consider adding deployment instructions for platforms like Heroku or AWS.
-2- Implement additional functionalities based on specific needs.
+    A core application containing middleware, forms, views, tests, logging utilities, and data generation tools.
